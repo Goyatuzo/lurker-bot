@@ -7,7 +7,6 @@ use dotenv::dotenv;
 use serenity::{framework::StandardFramework, prelude::GatewayIntents, Client};
 use tokio::{task, time};
 use tracing::info;
-use tracing_subscriber;
 
 use crate::services::health::HealthService;
 
@@ -25,8 +24,6 @@ async fn main() {
             info!("{:?}", HealthService::get_status());
         }
     });
-
-    //health_log.await.expect("Health check cannot err");
 
     let token = std::env::var("DISCORD_TOKEN").expect("Discord Token cannot be null");
     let intents = GatewayIntents::non_privileged();
