@@ -1,9 +1,9 @@
 #[derive(Debug)]
 pub enum HealthStatus {
-	OK
+    OK,
 }
 
 #[derive(Debug)]
 pub struct HealthInfo {
-	pub status: HealthStatus
+    pub status: HealthStatus,
 }
